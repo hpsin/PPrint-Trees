@@ -35,7 +35,16 @@ getGraphTop = function(procs){
 
 var top = getGraphTop(procs);
 
-pprint.logTree(top, function(node){return node.children}, function(node){return node.id + " node"});
+var sym_npm_ls = 
+{	lastChild:'└─',
+	hasChildren:'┬ ',
+	hasSibling:'├─',
+	connector:'─ ',
+	pipe:'│ ',
+ 	lastChildPrefix:'  '	
+}
+
+pprint.logTree(top, function(node){return node.children}, function(node){return node.id + " node"}, sym_npm_ls);
 
 
 

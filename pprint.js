@@ -1,8 +1,17 @@
 var fPrint, // f(node) -> string to be printed for the node. 
 	fChildren; // f(node)-> children of the node.
-exports.logTree= function(node, fC, fP){
+var sym = 
+{	lastChild:'└───',
+	hasChildren:'',
+	hasSibling:'├───',
+	connector:'──',
+	pipe:'│   ',
+ 	lastChildPrefix:'    '	
+}
+exports.logTree= function(node, fC, fP, syms){
 	fPrint = fP;
 	fChildren = fC;
+	if(syms!==undefined)sym=syms;
 	console.log(fPrint(node));
 	if(fChildren(node)){
 		fChildren(node).forEach(function(p){
@@ -37,11 +46,3 @@ function logSubTree(node, prefix, siblings){
 	}
 }
 
-var sym = 
-{	lastChild:'└───',
-	hasChildren:'',
-	hasSibling:'├───',
-	connector:'──',
-	pipe:'│   ',
- 	lastChildPrefix:'    '	
-}
