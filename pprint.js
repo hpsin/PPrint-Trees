@@ -29,7 +29,7 @@ function logSubTree(node, prefix, siblings){
 	} else {
 		write += sym.connector;
 	}
-	console.log(write +" "+ fPrint(node));
+	console.log(write + fPrint(node));
 	if(children){
 		children.forEach(function(p){
 			logSubTree(p, prefix, children);
@@ -38,11 +38,10 @@ function logSubTree(node, prefix, siblings){
 }
 
 var sym = 
-{	lastChild:'└─',
-	hasChildren:'┬',
-	hasSibling:'├─',
-	connector:'─',
-	pipe:'│ ',
- 	lastChildPrefix:'  '	
+{	lastChild:'└───',
+	hasChildren:'',
+	hasSibling:'├───',
+	connector:'──',
+	pipe:'│   ',
+ 	lastChildPrefix:'    '	
 }
-

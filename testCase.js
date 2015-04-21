@@ -35,7 +35,7 @@ getGraphTop = function(procs){
 
 var top = getGraphTop(procs);
 
-pprint.logTree(top, function(node){return node.children}, function(node){return node.id + " word"});
+pprint.logTree(top, function(node){return node.children}, function(node){return node.id + " node"});
 
 
 
